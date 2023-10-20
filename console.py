@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """ The HBnB console. """
+=======
+
+""" def HBnB console."""
+
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
 import cmd
 import re
 from shlex import split
@@ -32,11 +38,19 @@ def parse(arg):
 
 
 class HBNBCommand(cmd.Cmd):
+<<<<<<< HEAD
     """
     Defines the HolbertonBnB cmd interpreter.
 
     Attributes:
         prompt (str): command prompt.
+=======
+
+    """HolbertonBnB commandline interpreter.
+
+    Attributes:
+        prompt (str): Command prompt.
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
     """
 
     prompt = "(hbnb) "
@@ -51,12 +65,22 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def emptyline(self):
+<<<<<<< HEAD
         """ Do nothing if empty line is received """
+=======
+
+        """ don't do anything when an empty line is received """
+
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
         pass
 
     def default(self, arg):
 
+<<<<<<< HEAD
         """ Default behavior for cmd module for invalid inputs """
+=======
+        """ default cmd module behaviour when input is invalid"""
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
 
         argdict = {
             "all": self.do_all,
@@ -65,7 +89,13 @@ class HBNBCommand(cmd.Cmd):
             "count": self.do_count,
             "update": self.do_update
         }
+<<<<<<< HEAD
         match = re.search(r"\.", arg)
+=======
+
+        match = re.search(r"\.", arg)
+
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
         if match is not None:
             argl = [arg[:match.span()[0]], arg[match.span()[1]:]]
             match = re.search(r"\((.*?)\)", argl[1])
@@ -78,11 +108,18 @@ class HBNBCommand(cmd.Cmd):
         return False
 
     def do_quit(self, arg):
+<<<<<<< HEAD
         """ Quit command to exit the program. """
+=======
+
+        """  exit the program quietly (with this command)"""
+
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
         return True
 
     def do_EOF(self, arg):
 
+<<<<<<< HEAD
         """ EOF signal to exit the program. """
 
         print("")
@@ -93,6 +130,21 @@ class HBNBCommand(cmd.Cmd):
         Usage: create <class>
         Creates a new class instance & print its id.
         """
+=======
+        """ EOF program exit signal """
+
+        print("")
+
+        return True
+
+    def do_create(self, arg):
+
+        """ 
+	use: create <class>
+        Create new class instance & print its id.
+        """
+
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
         argl = parse(arg)
         if len(argl) == 0:
             print("** class name missing **")
@@ -104,11 +156,18 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
 
+<<<<<<< HEAD
         """
         Usage: show <class> <id> or <class>.show(<id>)
         Displays str repr of a class instance of a given id.
         """
 
+=======
+        """ 
+	use: show <class> <id> or <class>.show(<id>)
+        display str repr of a class instance of a given id.
+        """
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
         argl = parse(arg)
         objdict = storage.all()
         if len(argl) == 0:
@@ -124,11 +183,22 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
 
+<<<<<<< HEAD
         """ Usage: destroy <class> <id> or <class>.destroy(<id>)
         Del a class instance of a given id."""
 
         argl = parse(arg)
         objdict = storage.all()
+=======
+        """ 
+	use: destroy <class> <id> / <class>.destroy(<id>)
+        del a class instance of a given id.
+	"""
+
+        argl = parse(arg)
+        objdict = storage.all()
+
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in HBNBCommand.__classes:
@@ -143,9 +213,17 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
 
+<<<<<<< HEAD
         """ Usage: all or all <class> or <class>.all()
         Displays str repr of * instances of a given class.
         If no class is specified, displays * instantiated objects."""
+=======
+        """
+	use: all or all <class> or <class>.all()
+        disp. str repr of all instances of a given class.
+        If no class is specified, displays * instantiated objects.
+	"""
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
 
         argl = parse(arg)
         if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
@@ -161,8 +239,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_count(self, arg):
 
+<<<<<<< HEAD
         """ Usage: count <class> or <class>.count()
         Retrieves num of instances of a given class."""
+=======
+        """
+	use: count <class> or <class>.count()
+        counts/gets the numb of instances of a given class.
+	"""
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
 
         argl = parse(arg)
         count = 0
@@ -173,8 +258,17 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
 
+<<<<<<< HEAD
         """ Will update a class instance given an id by adding/updating
         a given attribute key/value pair or dict."""
+=======
+        """
+	use: update <class> <id> <attribute_name> <attribute_value> /
+       <class>.update(<id>, <attribute_name>, <attribute_value>) /
+       <class>.update(<id>, <dictionary>)
+        updates a class instance of a given id by adding or updating
+        a given key/value pair attr of a dict """
+>>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
 
         argl = parse(arg)
         objdict = storage.all()
