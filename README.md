@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Some context on the project
 This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
 
@@ -25,4 +25,3 @@ Concepts
 For this project, we expect you to look at these concepts:
 
 Python packages
->>>>>>> 19bec6a4bef1f758da54335ef624c8be3dad4c60
